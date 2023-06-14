@@ -32,7 +32,6 @@ Reminder: some variants can have different annotations as they can affect the tr
 
 #! Another common operation is the use of boolean vectors to filter the data. The operators are: | for or, & for and, and ~ for not. These must be grouped by using parentheses.
 
-# Read CSV file #? For argentina I will use the previously filtered file containing homozygous variants only in the index
 f=sys.argv[1]
 foo = f[:-4]
 file = open(f)
