@@ -37,4 +37,4 @@ For consistency, better to use the filtering files in the same order, although i
 #### Chuetas
 1) xuetas_allgenes.R -> contains different analyses based on different scenarios analysed. The outputs are either plots or tables to visualise the data.
 
-Discalaimer: these scripts are a selection from all the ones used in the process of each cohort analysis. They represent the basic steps to get initial results.
+Disclaimer: these scripts are a selection from all the ones used in the process of each cohort analysis. They represent the basic steps to get initial results.
