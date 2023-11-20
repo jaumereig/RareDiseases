@@ -1,21 +1,21 @@
 # Rare Variants AID
 #### FILTERING FILES FOR PREPROCESSING
 1) xlsx2tsv.sh -> bash script to automatize the re-formatting of the excel VCFs to tab-separated files -- easier to process and read
-2) select_heterozygous.py -> from input VCF extracts variants in heterozygosity
-3) select_homozygous.py -> from input VCF extracts variants in homozygosity
+2) select_heterozygous.py -> from input VCF extracts variants in heterozygosity (column AF = 0.5)
+3) select_homozygous.py -> from input VCF extracts variants in homozygosity (column AF = 1.0)
 4) annotation_filter.py -> from input VCF extracts variants with LoF or missense annotations (see script for more details)
 5) pop_freq_filter.py -> from input VCF extracts variants with population frequency below 0.01 or with NA values
 For consistency, better to use the filtering files in the same order, although is not necessary to obtain the right results in the end.
 
 #### COMPOUND HETEROZYGOUS
-1) df_compound_het.py -> creates a dataframe with the IDs of the input files and the common variants
+1) df_compound_het.py -> creates a dataframe with the IDs of the input files and the variants in common
    Example:
    
                       CHROM	POS	Gene_ID	AF_index	AF_1	AF_2	gnomAD_WG_AF
                       1	145299792	 NBPF10	0.5	0.5	0.5	0.00418
                       1	185299805	 OTOP1 	0.5	0.5	0.5	0.004214
 #### DE NOVO
-1) df_denovo.py -> filters variants of index that are not present in the rest of the family.
+1) df_denovo.py -> filters variants of index that are not present in the rest of the family and that are only heterozygous.
    Example (not all columns included):
    
                       CHROM	POS	REF	ALT	QUAL	Allele	Annotation	Annotation_Impact	Gene_Name AF
