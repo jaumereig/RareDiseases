@@ -1,4 +1,13 @@
 # Rare Variants AID
+#### Introduction and genetic scenarios
+These are scripts to process genetic variants from different families or cohorts of patients in VCF format. Each file contains several variants on each row with several columns containing different pieces of information that we may use to filter them.
+When we have a family, we refer to the patient as index and the VCF from the index will serve as the reference to filter out or keep the variants depending on the genetic scenario we are studying.
+The objective is to retrieve candidate variants for the disease of the index (patient) according to the genetic information studied from the relatives.
+
+The genetic scenarios that we are considering in this case are mainly, recessive homozygous (the index may have a homozygous variant that is recessive and inherited from both parents, hence the parents are heterozygous for that variant and that's why they don't express the disease), compound heterozygous (two heterozygous and different variants in the same gene, each inherited from a different parent), de novo model (the index has a heterozygous variant that is dominant and is not present in either parent).
+Even though the scenarios are very clear, the reality is that for each pedigree (family tree) we will have different information available. In some cases, only the genetic information from siblings or children of the index is available but not the genetic information from the parents.
+
+1) Recessive homozygous: 
 #### FILTERING FILES FOR PREPROCESSING
 1) xlsx2tsv.sh -> bash script to automatize the re-formatting of the excel VCFs to tab-separated files -- easier to process and read
 2) select_heterozygous.py -> from input VCF extracts variants in heterozygosity (column AF = 0.5)
